@@ -46,6 +46,10 @@ img {
 }
 
 /* ==================== main style =============================     */
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: 'Josefin Sans', sans-serif;
 	font-weight: 400;
@@ -121,6 +125,29 @@ body {
 	line-height: 26px;
 	letter-spacing: 2.8px;
 	color: #999999;
+}
+
+.header-link {
+	position: relative;
+	width: 108px;
+	height: 46px;
+	display: block;
+	margin: 108px auto 0px;
+	text-align: center;
+	font-size: 14px;
+	line-height: 26px;
+	letter-spacing: 2.8px;
+	color: #FFFFFF;
+}
+
+.header-link::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 17px;
+	height: 11px;
+	background: url(../images/arrow-down.svg) no-repeat center;
 }
 
 .header-block {
