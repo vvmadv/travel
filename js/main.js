@@ -10,7 +10,10 @@ $(document).ready(function () {
     });
 
     // mobile menu
+    let scrollTop = 0;
     $(".mobile-burger").click(function () {
+        scrollTop = window.scrollY;
+        // console.log(scrollTop);
         $(".mobile-burger span").toggleClass("active")
         $(".menu").toggleClass("open")
         $(".nav").toggleClass("open")
@@ -20,12 +23,18 @@ $(document).ready(function () {
         } else {
             $("body").removeClass("overlay")
         }
+        if($("body").hasClass("overlay")) {
+            window.scrollTo(0, scrollTop)
+        }
     })
 
-        // $(".unactive").slick({
-        //     settings:"unslick"
-        // }) 
-    
+        $(".header-link").click(function (e) {
+            e.preventDefault()
+           $("html, body").animate({
+            scrollTop: $(".header-bottom").offset().top
+           }, 800)
+           return false; 
+        }) 
 
     let headerBottom = $(".header-bottom")
     $(document).scroll(function () {
